@@ -1,0 +1,767 @@
+@model avaliacoes.Models.Avaliacao
+
+@{
+    ViewData["Title"] = "Auto Avaliação";
+
+}
+
+<section class="features text-center alt-background">
+    <div class="container">
+        <!--<h3>Features</h3>
+        <div class="divider"></div>-->
+        <div class="row">
+            <div class="col-md-12">
+
+                <h4>AUTO AVALIAÇÃO DO “SELO AMIGO DO IDOSO”</h4>
+                <p></p>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center"></h5>
+                        <h6 class="card-subtitle mb-2 text-muted"></h6>
+                        <p class="card-text">
+                            <br />
+                            <form id="avaliacao" data-parsley-validate="" asp-action="Create">
+                                <div class="form-group row pt-3 pb-2 m-auto col-md-12">
+                                    <div class="col-md-6 mb-3">
+                                        <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome do responsável pelo preenchimento:" required="">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="E-mail:" required="">
+                                    </div>
+
+                                    <div class="card mb-5">
+                                        <div class="card-header">
+                                            <strong> Preenchimento Seção "Açoes Obrigatórias"</strong>
+                                        </div>
+                                        <div class="card-body">
+                        <p style="text-align: right;">100% Implementadas?</p>
+
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                1) Implantar e manter o Comitê Gestor do Projeto.
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao1" id="ao1_1" value="1" required="" data-parsley-multiple="ao1">
+                                            <label class="form-check-label" for="ao1">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao1" id="ao1_2" value="2" data-parsley-multiple="ao1">
+                                            <label class="form-check-label" for="ao1">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                2) Realizar diagnóstico com a participação ativa dos pacientes idosos e seus cuidadores / acompanhantes e dos profissionais que atuam diretamente na assistência à saúde do idoso.
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao2" id="ao2_1" value="1" required="" data-parsley-multiple="ao2">
+                                            <label class="form-check-label" for="ao2">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao2" id="ao2_2" value="2" data-parsley-multiple="ao2">
+                                            <label class="form-check-label" for="ao2">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                3) Realizar inventário detalhado das ações de melhoria promovidas pela instituição e atualizá-lo continuamente.
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao3" id="ao3_1" value="1" required="" data-parsley-multiple="ao3">
+                                            <label class="form-check-label" for="ao3">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao3" id="ao3_2" value="2" data-parsley-multiple="ao3">
+                                            <label class="form-check-label" for="ao3">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                4) Gerenciar (inserir, manter e monitorar) as ações de melhoria direcionadas aos pacientes idosos, de acordo com as estratégias definidas.
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao4" id="ao4_1" value="1" required="" data-parsley-multiple="ao4">
+                                            <label class="form-check-label" for="ao4">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao4" id="ao4_2" value="2" data-parsley-multiple="ao4">
+                                            <label class="form-check-label" for="ao4">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                5) Elaborar plano para tratar das questões voltadas à acessibilidade (física e sensorial) em espaços e edificações de uso público ou de uso coletivo, com foco principal nas necessidades e no grau de dependência do idoso.
+                                <span class="badge">
+                                    <span class="badge">
+                                        <div class="input-group-append" id="button-addon4">
+                                            <span class="input-group-text">
+                                                <input type="radio" name="ao5" id="ao5_1" value="1" required="" data-parsley-multiple="ao5">
+                                                <label class="form-check-label" for="ao5">&nbsp;&nbsp;Sim</label>
+                                            </span>
+                                            <span class="input-group-text">
+                                                <input type="radio" name="ao5" id="ao5_2" value="2" data-parsley-multiple="ao5">
+                                                <label class="form-check-label" for="ao5">&nbsp;&nbsp;Não</label>
+                                            </span>
+                                        </div>
+                                    </span>
+                                </span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                6) Elaborar estratégia de educação permanente em envelhecimento e saúde do idoso para todos os membros da equipe que atuam diretamente na assistência à saúde do idoso.
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao6" id="ao6_1" value="1" required="" data-parsley-multiple="ao6">
+                                            <label class="form-check-label" for="ao6">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao6" id="ao6_2" value="2" data-parsley-multiple="ao6">
+                                            <label class="form-check-label" for="ao6">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                7) Instituir protocolo multiprofissional de prevenção de queda e lesão por pressão em todos os ambientes assistenciais relacionados à atenção ao idoso.
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao7" id="ao7_1" value="1" required="" data-parsley-multiple="ao7">
+                                            <label class="form-check-label" for="ao7">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao7" id="ao7_2" value="2" data-parsley-multiple="ao7">
+                                            <label class="form-check-label" for="ao7">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                8) Implantar e manter uma equipe assistencial multiprofissional orientada para a melhoria dos cuidados de saúde ao idoso.
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao8" id="ao8_1" value="1" required="" data-parsley-multiple="ao8">
+                                            <label class="form-check-label" for="ao8">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao8" id="ao8_2" value="2" data-parsley-multiple="ao8">
+                                            <label class="form-check-label" for="ao8">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                9) Realizar ações de comunicação, buscando comprometimento individual e organizacional com a qualidade e segurança da assistência prestada aos idosos.
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao9" id="ao9_1" value="1" required="" data-parsley-multiple="ao9">
+                                            <label class="form-check-label" for="ao9">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao9" id="ao9_2" value="2" data-parsley-multiple="ao9">
+                                            <label class="form-check-label" for="ao9">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                10)  Assegurar ao idoso internado ou em observação o direito a acompanhante.
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao10" id="ao10_1" value="1" required="" data-parsley-multiple="ao10">
+                                            <label class="form-check-label" for="ao10">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao10" id="ao10_2" value="2" data-parsley-multiple="ao10">
+                                            <label class="form-check-label" for="ao10">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                11) Assegurar ao paciente idoso o direito de atendimento prioritário.
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao11" id="ao11_1" value="1" required="" data-parsley-multiple="ao11">
+                                            <label class="form-check-label" for="ao11">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao11" id="ao11_2" value="2" data-parsley-multiple="ao11">
+                                            <label class="form-check-label" for="ao11">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                12) Realizar, pelo menos, 1 (uma) ação que responda a uma das demandas especificadas pelos idosos.
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao12" id="ao12_1" value="1" required="" data-parsley-multiple="ao12">
+                                            <label class="form-check-label" for="ao12">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao12" id="ao12_2" value="2" data-parsley-multiple="ao12">
+                                            <label class="form-check-label" for="ao12">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                13) Estabelecer modelo e instrumentos de comunicação a respeito dos direitos e responsabilidades/deveres dos pacientes idosos e acompanhantes.
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao13" id="ao13_1" value="1" required="">
+                                            <label class="form-check-label" for="ao13">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao13" id="ao13_2" value="2">
+                                            <label class="form-check-label" for="ao13">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                14) Disponibilizar infraestrutura adequada para prevenção de quedas e lesão por pressão em todos os ambientes assistenciais relacionados à atenção ao idoso.
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao14" id="ao14_1" value="1" required="">
+                                            <label class="form-check-label" for="ao14">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao14" id="ao14_2" value="2">
+                                            <label class="form-check-label" for="ao14">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                15) Implantar ações de gerenciamento da assistência farmacêutica para monitoramento e intervenção na polifarmácia, interações medicamentosas e medicação potencialmente inapropriada para idosos.
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao15" id="ao15_1" value="1" required="">
+                                            <label class="form-check-label" for="ao15">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao15" id="ao15_2" value="2">
+                                            <label class="form-check-label" for="ao15">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                16) Implantar ações para notificação e apoio nos casos de violência contra idosos.
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao16" id="ao16_1" value="1" required="">
+                                            <label class="form-check-label" for="ao16">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao16" id="ao16_2" value="2">
+                                            <label class="form-check-label" for="ao16">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                17) Garantir uma adequada utilização de medidas restritivas de contenção para situações clínicas definidas.
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao17" id="ao17_1" value="1" required="">
+                                            <label class="form-check-label" for="ao17">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao17" id="ao17_2" value="2">
+                                            <label class="form-check-label" for="ao17">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+
+
+                        </ul>
+
+
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="card mb-5">
+                    <div class="card-header">
+                        <strong>Preenchimento Seção "Açoes Eletivas - Eixo Comunicação e Informação"</strong>
+                    </div>
+                    <div class="card-body">
+                        <p style="text-align: right;">100% Implementadas?</p>
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                18) Orientar o paciente idoso e seus familiares a respeito das Redes Sociais de Apoio aos Idosos na comunidade.
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao18" id="ao18_1" value="1" required="">
+                                            <label class="form-check-label" for="ao18">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao18" id="ao18_2" value="2">
+                                            <label class="form-check-label" for="ao18">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                19) Implantar ações de promoção de saúde e educação permanente para idosos, contribuindo para que se mantenham ativos, participantes e em aprendizado contínuo.
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao19" id="ao19_1" value="1" required="">
+                                            <label class="form-check-label" for="ao19">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao19" id="ao19_2" value="2">
+                                            <label class="form-check-label" for="ao19">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                20) Realizar ações permanentes de atualização e orientação aos cuidadores familiares/acompanhantes de idosos.
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao20" id="ao20_1" value="1" required="">
+                                            <label class="form-check-label" for="ao20">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao20" id="ao20_2" value="2">
+                                            <label class="form-check-label" for="ao20">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                21) Implantar programa “Voluntários Amigos do Idoso”
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao21" id="ao21_1" value="1" required="">
+                                            <label class="form-check-label" for="ao21">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao21" id="ao21_2" value="2">
+                                            <label class="form-check-label" for="ao21">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                22) Criar ações que respeitem a diversidade (raças, crenças, orientações sexuais, idades, gêneros, regiões e culturas) dos idosos.
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao22" id="ao22_1" value="1" required="">
+                                            <label class="form-check-label" for="ao22">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao22" id="ao22_2" value="2">
+                                            <label class="form-check-label" for="ao22">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div> <!-- FIM CARD -->
+                <!-- Eixo Ambiente Físico -->
+
+                <div class="card mb-5">
+                    <div class="card-header">
+                        <strong>Preenchimento Seção "Açoes Eletivas - Eixo Ambiente Físico"</strong>
+                    </div>
+                    <div class="card-body">
+                        <p style="text-align: right;">100% Implementadas?</p>
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                23) Implantar e manter sinalização nas áreas de circulação.
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao23" id="ao23_1" value="1" required="">
+                                            <label class="form-check-label" for="ao23">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao23" id="ao23_2" value="2">
+                                            <label class="form-check-label" for="ao23">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                24) Disponibilizar pisos, rampas e calçadas seguras.
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao24" id="ao24_1" value="1" required="">
+                                            <label class="form-check-label" for="ao24">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao24" id="ao24_2" value="2">
+                                            <label class="form-check-label" for="ao24">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                25) Instalar dispositivos de luz noturna.
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao25" id="ao25_1" value="1" required="">
+                                            <label class="form-check-label" for="ao25">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao25" id="ao25_2" value="2">
+                                            <label class="form-check-label" for="ao25">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                26) Propiciar iluminação adequada em todos os ambientes assistenciais relacionados à atenção ao idoso.
+
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao26" id="ao26_1" value="1" required="">
+                                            <label class="form-check-label" for="ao26">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao26" id="ao26_2" value="2">
+                                            <label class="form-check-label" for="ao26">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                27) Disponibilizar sistema de chamada de enfermagem.
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao27" id="ao27_1" value="1" required="">
+                                            <label class="form-check-label" for="ao27">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao27" id="ao27_2" value="2">
+                                            <label class="form-check-label" for="ao27">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                28) Disponibilizar espaços de circulação seguros e livres de obstáculos.
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao28" id="ao28_1" value="1" required="">
+                                            <label class="form-check-label" for="ao28">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao28" id="ao28_2" value="2">
+                                            <label class="form-check-label" for="ao28">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                29) Disponibilizar barras de apoio.
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao29" id="ao29_1" value="1" required="">
+                                            <label class="form-check-label" for="ao29">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao29" id="ao29_2" value="2">
+                                            <label class="form-check-label" for="ao29">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                30) Disponibilizar condições de conforto ambiental (térmico e ventilação)
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao30" id="ao30_1" value="1" required="">
+                                            <label class="form-check-label" for="ao30">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao30" id="ao30_2" value="2">
+                                            <label class="form-check-label" for="ao30">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                31) Desenvolver ações que otimizem o fluxo interno de pacientes idosos.
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao31" id="ao31_1" value="1" required="">
+                                            <label class="form-check-label" for="ao31">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao31" id="ao31_2" value="2">
+                                            <label class="form-check-label" for="ao31">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                32)Disponibilizar locais de espera seguros e confortáveis.
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao32" id="ao32_1" value="1" required="">
+                                            <label class="form-check-label" for="ao32">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao32" id="ao32_2" value="2">
+                                            <label class="form-check-label" for="ao32">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+                            </lu>
+                    </div>
+                </div> <!-- FIM CARD -->
+                <!-- Eixo Ambiente Físico -->
+                <!-- Eixo Sistemas de Gestão Assistencial -->
+                <div class="card mb-5">
+                    <div class="card-header">
+                        <strong>Preenchimento Seção "Açoes Eletivas - Eixo Sistemas de Gestão Assistencial"</strong>
+                    </div>
+                    <div class="card-body">
+                        <p style="text-align: right;">100% Implementadas?</p>
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                33) Estimular práticas de autocuidado e educação em saúde que promovam a autonomia e independência do idoso.
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao33" id="ao33_1" value="1" required="">
+                                            <label class="form-check-label" for="ao33">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao33" id="ao33_2" value="2">
+                                            <label class="form-check-label" for="ao33">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                34) Estruturar sistema de acolhimento com classificação de risco.
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao34" id="ao34_1" value="1" required="">
+                                            <label class="form-check-label" for="ao34">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao34" id="ao34_2" value="2">
+                                            <label class="form-check-label" for="ao34">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                35) Estruturar plano de alta, visando a adesão do paciente e familiar/responsável à continuidade do cuidado.
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao35" id="ao35_1" value="1" required="">
+                                            <label class="form-check-label" for="ao35">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao35" id="ao35_2" value="2">
+                                            <label class="form-check-label" for="ao35">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                36) Implantar a avaliação multidimensional baseada nos instrumentos geriátricos e gerontológicos validados, com implantação de planos de cuidados e monitoramento da capacidade funcional do idoso.
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao36" id="ao36_1" value="1" required="">
+                                            <label class="form-check-label" for="ao36">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao36" id="ao36_2" value="2">
+                                            <label class="form-check-label" for="ao36">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                37) Implantar protocolos para registro e gerenciamento de iatrogenias que acometem os idosos.
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao37" id="ao37_1" value="1" required="">
+                                            <label class="form-check-label" for="ao37">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao37" id="ao37_2" value="2">
+                                            <label class="form-check-label" for="ao37">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                38) Implantar sistema de monitoramento para redução do tempo de espera para internação do idoso em ambiente adequado.
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao38" id="ao38_1" value="1" required="">
+                                            <label class="form-check-label" for="ao38">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao38" id="ao38_2" value="2">
+                                            <label class="form-check-label" for="ao38">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                39) Implantar ou reestruturar serviços que contemplem os cuidados ao final da vida e cuidados paliativos
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao39" id="ao39_1" value="1" required="">
+                                            <label class="form-check-label" for="ao39">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao39" id="ao39_2" value="2">
+                                            <label class="form-check-label" for="ao39">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                40) Implementar ferramenta para identificação de situações especiais de fragilidade e/ou vulnerabilidade.
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao40" id="ao40_1" value="1" required="">
+                                            <label class="form-check-label" for="ao40">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao40" id="ao40_2" value="2">
+                                            <label class="form-check-label" for="ao40">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                41) Implementar ações de prevenção de delirium.
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao41" id="ao41_1" value="1" required="">
+                                            <label class="form-check-label" for="ao41">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao41" id="ao41_2" value="2">
+                                            <label class="form-check-label" for="ao41">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                42) Implementar ações de prevenção de broncoaspiração
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao42" id="ao42_1" value="1" required="">
+                                            <label class="form-check-label" for="ao42">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao42" id="ao42_2" value="2">
+                                            <label class="form-check-label" for="ao42">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                43) Implementar ferramenta para rastreio de risco nutricional.
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao43" id="ao43_1" value="1" required="">
+                                            <label class="form-check-label" for="ao43">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao43" id="ao43_2" value="2">
+                                            <label class="form-check-label" for="ao43">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between " style="text-align: left;">
+                                44) Promover ações para estímulo da mobilidade do idoso.
+                                <span class="badge">
+                                    <div class="input-group-append" id="button-addon4">
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao44" id="ao44_1" value="1" required="">
+                                            <label class="form-check-label" for="ao44">&nbsp;&nbsp;Sim</label>
+                                        </span>
+                                        <span class="input-group-text">
+                                            <input type="radio" name="ao44" id="ao44_2" value="2">
+                                            <label class="form-check-label" for="ao44">&nbsp;&nbsp;Não</label>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div> <!-- FIM CARD -->
+            </div>
+            <hr>
+            <div class="text-center mb-5">
+                <button type="submit" class="btn btn-outline-success enviar_avaliacao">Enviar Avaliação</button>
+            </div>
+            </form>
+        </div>
+    </div>
+
+    </div>
+    </div>
+    </div>
+</section>

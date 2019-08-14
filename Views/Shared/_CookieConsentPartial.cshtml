@@ -1,0 +1,25 @@
+﻿@using Microsoft.AspNetCore.Http.Features
+
+@{
+    var consentFeature = Context.Features.Get<ITrackingConsentFeature>();
+    var showBanner = !consentFeature?.CanTrack ?? false;
+    var cookieString = consentFeature?.CreateConsentCookie();
+}
+
+@if (showBanner)
+{
+    <div id="cookieConsent" class="alert alert-info alert-dismissible fade show" role="alert">
+        Cookies sujeitos a consentimento: Todos os demais cookies que não são rigorosamente necessários para utilizar os Serviços também têm funções importantes. Sem estes cookies, as funções criadas para a conveniência do utilizador nos nossos Serviços, tais como as suas configurações pessoais ou o preenchimento automático de formulários, não poderiam ser preservadas e, portanto, teriam de ser reintroduzidas em cada página. <a asp-area="" asp-controller="Home" asp-action="Privacy">Learn More</a>.
+        <button type="button" class="accept-policy close" data-dismiss="alert" aria-label="Close" data-cookie-string="@cookieString">
+            <span aria-hidden="true">Aceitar</span>
+        </button>
+    </div>
+    <script>
+        (function () {
+            var button = document.querySelector("#cookieConsent button[data-cookie-string]");
+            button.addEventListener("click", function (event) {
+                document.cookie = button.dataset.cookieString;
+            }, false);
+        })();
+    </script>
+}

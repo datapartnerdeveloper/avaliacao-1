@@ -1,0 +1,781 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<!-- 
+<section class="content mt-5" id="initAval">
+    <div class="container text-center">
+        <form id="avaliacao" data-parsley-validate="">
+            <div class="form-group row pt-3 pb-2 m-auto col-md-8">
+                <div class="col-md-6 mb-3">
+                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome do responsável pelo preenchimento:" required="">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="E-mail:" required="">
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Obrigatória 1
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao1" id="ao1_1" value="1" required="">
+                        <label class="form-check-label" for="ao1">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao1" id="ao1_2" value="2">
+                        <label class="form-check-label" for="ao1">Não</label>
+                    </p>
+
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Obrigatória 2
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao2" id="ao2_1" value="1" required="">
+                        <label class="form-check-label" for="ao2">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao2" id="ao2_2" value="2">
+                        <label class="form-check-label" for="ao2">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5" id="ava_ao2_1_1">
+                <div class="card-header">
+                    Foi implementada alguma ação levantada no diagnóstico realizado com os idosos que frequentam a instituição?
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao2_1" id="ao2_1_1" value="1" required="">
+                        <label class="form-check-label" for="ao2_1">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao2_1" id="ao2_1_2" value="2">
+                        <label class="form-check-label" for="ao2_1">Não</label>
+                        <input type="radio" name="ao2_1" id="ao2_1_3" value="0" hidden>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5" id="ava_ao2_1_2">
+                <div class="card-header">
+                    Indicar quantas ações foram implementadas com base no diagnóstico realizado com os idosos que frequentam a instituição:
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"></p>
+                    <p>
+                        <input type="radio" name="ao2_2" id="ao2_1_2_1" value="1" required="">
+                        <label class="form-check-label" for="ao2_2">1</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao2_2" id="ao2_1_2_2" value="2">
+                        <label class="form-check-label" for="ao2_2">2 ou mais</label>
+                        <input type="radio" name="ao2_2" id="ao2_1_2_3" value="0" hidden>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Obrigatória 3
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao3" id="ao3_1" value="1" required="">
+                        <label class="form-check-label" for="ao3">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao3" id="ao3_2" value="2">
+                        <label class="form-check-label" for="ao3">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Obrigatória 4
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao4" id="ao4_1" value="1" required="">
+                        <label class="form-check-label" for="ao4">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao4" id="ao4_2" value="2">
+                        <label class="form-check-label" for="ao4">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Obrigatória 5
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao5" id="ao5_1" value="1" required="">
+                        <label class="form-check-label" for="ao5">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao5" id="ao5_2" value="2">
+                        <label class="form-check-label" for="ao5">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Obrigatória 6
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao6" id="ao6_1" value="1" required="">
+                        <label class="form-check-label" for="ao6">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao6" id="ao6_2" value="2">
+                        <label class="form-check-label" for="ao6">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Obrigatória 7
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao7" id="ao7_1" value="1" required="">
+                        <label class="form-check-label" for="ao7">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao7" id="ao7_2" value="2">
+                        <label class="form-check-label" for="ao7">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Obrigatória 8
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao8" id="ao8_1" value="1" required="">
+                        <label class="form-check-label" for="ao8">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao8" id="ao8_2" value="2">
+                        <label class="form-check-label" for="ao8">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Obrigatória 9
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao9" id="ao9_1" value="1" required="">
+                        <label class="form-check-label" for="ao9">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao9" id="ao9_2" value="2">
+                        <label class="form-check-label" for="ao9">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Obrigatória 10
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao10" id="ao10_1" value="1" required="">
+                        <label class="form-check-label" for="ao10">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao10" id="ao10_2" value="2">
+                        <label class="form-check-label" for="ao10">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Obrigatória 11
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao11" id="ao11_1" value="1" required="">
+                        <label class="form-check-label" for="ao11">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao11" id="ao11_2" value="2">
+                        <label class="form-check-label" for="ao11">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Obrigatória 12
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao12" id="ao12_1" value="1" required="">
+                        <label class="form-check-label" for="ao8">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao12" id="ao12_2" value="2">
+                        <label class="form-check-label" for="ao12">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Eletiva 13 (Eixo Comunicação e Informação)
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao13" id="ao13_1" value="1" required="">
+                        <label class="form-check-label" for="ao13">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao13" id="ao13_2" value="2">
+                        <label class="form-check-label" for="ao8">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Eletiva 14 (Eixo Comunicação e Informação)
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao14" id="ao14_1" value="1" required="">
+                        <label class="form-check-label" for="ao8">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao14" id="ao14_2" value="2">
+                        <label class="form-check-label" for="ao14">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Eletiva 15 (Eixo Comunicação e Informação)
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao15" id="ao15_1" value="1" required="">
+                        <label class="form-check-label" for="ao8">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao15" id="ao15_2" value="2">
+                        <label class="form-check-label" for="ao15">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Eletiva 16 (Eixo Comunicação e Informação)
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao16" id="ao16_1" value="1" required="">
+                        <label class="form-check-label" for="ao16">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao16" id="ao16_2" value="2">
+                        <label class="form-check-label" for="ao16">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Eletiva 17 (Eixo Comunicação e Informação)
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao17" id="ao17_1" value="1" required="">
+                        <label class="form-check-label" for="ao17">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao17" id="ao17_2" value="2">
+                        <label class="form-check-label" for="ao17">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Eletiva 18 (Eixo Comunicação e Informação)
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao18" id="ao18_1" value="1" required="">
+                        <label class="form-check-label" for="ao18">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao18" id="ao18_2" value="2">
+                        <label class="form-check-label" for="ao18">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Eletiva 19 (Eixo Ambiente Físico)
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao19" id="ao19_1" value="1" required="">
+                        <label class="form-check-label" for="ao8">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao19" id="ao19_2" value="2">
+                        <label class="form-check-label" for="ao19">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Eletiva 20 (Eixo Ambiente Físico)
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao20" id="ao20_1" value="1" required="">
+                        <label class="form-check-label" for="ao20">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao20" id="ao20_2" value="2">
+                        <label class="form-check-label" for="ao20">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Eletiva 21 (Eixo Ambiente Físico)
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao21" id="ao21_1" value="1" required="">
+                        <label class="form-check-label" for="ao21">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao21" id="ao21_2" value="2">
+                        <label class="form-check-label" for="ao21">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Eletiva 22 (Eixo Ambiente Físico)
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao22" id="ao22_1" value="1" required="">
+                        <label class="form-check-label" for="ao22">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao22" id="ao22_2" value="2">
+                        <label class="form-check-label" for="ao22">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Eletiva 23 (Eixo Ambiente Físico)
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao23" id="ao23_1" value="1" required="">
+                        <label class="form-check-label" for="ao23">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao23" id="ao23_2" value="2">
+                        <label class="form-check-label" for="ao23">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Eletiva 24 (Eixo Ambiente Físico)
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao24" id="ao24_1" value="1" required="">
+                        <label class="form-check-label" for="ao24">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao24" id="ao24_2" value="2">
+                        <label class="form-check-label" for="ao24">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Eletiva 25 (Eixo Ambiente Físico)
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao25" id="ao25_1" value="1" required="">
+                        <label class="form-check-label" for="ao25">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao25" id="ao25_2" value="2">
+                        <label class="form-check-label" for="ao25">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Eletiva 26 (Eixo Ambiente Físico)
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao26" id="ao26_1" value="1" required="">
+                        <label class="form-check-label" for="ao26">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao26" id="ao26_2" value="2">
+                        <label class="form-check-label" for="ao26">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Eletiva 27 (Eixo Ambiente Físico)
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao27" id="ao27_1" value="1" required="">
+                        <label class="form-check-label" for="ao27">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao27" id="ao27_2" value="2">
+                        <label class="form-check-label" for="ao27">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Eletiva 28 (Eixo Ambiente Físico)
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao28" id="ao28_1" value="1" required="">
+                        <label class="form-check-label" for="ao28">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao28" id="ao28_2" value="2">
+                        <label class="form-check-label" for="ao28">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Eletiva 29 (Eixo Ambiente Físico)
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao29" id="ao29_1" value="1" required="">
+                        <label class="form-check-label" for="ao29">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao29" id="ao29_2" value="2">
+                        <label class="form-check-label" for="ao29">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Eletiva 30 (Eixo Sistemas de Gestão Assistencial)
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao30" id="ao30_1" value="1" required="">
+                        <label class="form-check-label" for="ao30">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao30" id="ao30_2" value="2">
+                        <label class="form-check-label" for="ao30">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Eletiva 31 (Eixo Sistemas de Gestão Assistencial)
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao31" id="ao31_1" value="1" required="">
+                        <label class="form-check-label" for="ao31">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao31" id="ao31_2" value="2">
+                        <label class="form-check-label" for="ao31">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Eletiva 32 (Eixo Sistemas de Gestão Assistencial)
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao32" id="ao32_1" value="1" required="">
+                        <label class="form-check-label" for="ao32">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao32" id="ao32_2" value="2">
+                        <label class="form-check-label" for="ao32">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Eletiva 33 (Eixo Sistemas de Gestão Assistencial)
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao33" id="ao33_1" value="1" required="">
+                        <label class="form-check-label" for="ao33">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao33" id="ao33_2" value="2">
+                        <label class="form-check-label" for="ao33">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Eletiva 34 (Eixo Sistemas de Gestão Assistencial)
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao34" id="ao34_1" value="1" required="">
+                        <label class="form-check-label" for="ao34">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao34" id="ao34_2" value="2">
+                        <label class="form-check-label" for="ao34">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Eletiva 35 (Eixo Sistemas de Gestão Assistencial)
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao35" id="ao35_1" value="1" required="">
+                        <label class="form-check-label" for="ao35">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao35" id="ao35_2" value="2">
+                        <label class="form-check-label" for="ao35">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Eletiva 36 (Eixo Sistemas de Gestão Assistencial)
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao36" id="ao36_1" value="1" required="">
+                        <label class="form-check-label" for="ao36">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao36" id="ao36_2" value="2">
+                        <label class="form-check-label" for="ao36">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Eletiva 37 (Eixo Sistemas de Gestão Assistencial)
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao37" id="ao37_1" value="1" required="">
+                        <label class="form-check-label" for="ao8">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao37" id="ao37_2" value="2">
+                        <label class="form-check-label" for="ao37">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Eletiva 38 (Eixo Sistemas de Gestão Assistencial)
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao38" id="ao38_1" value="1" required="">
+                        <label class="form-check-label" for="ao38">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao38" id="ao38_2" value="2">
+                        <label class="form-check-label" for="ao38">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Eletiva 39 (Eixo Sistemas de Gestão Assistencial)
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao39" id="ao39_1" value="1" required="">
+                        <label class="form-check-label" for="ao39">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao39" id="ao39_2" value="2">
+                        <label class="form-check-label" for="ao39">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Eletiva 40 (Eixo Sistemas de Gestão Assistencial)
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao40" id="ao40_1" value="1" required="">
+                        <label class="form-check-label" for="ao40">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao40" id="ao40_2" value="2">
+                        <label class="form-check-label" for="ao40">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Eletiva 41 (Eixo Sistemas de Gestão Assistencial)
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao41" id="ao41_1" value="1" required="">
+                        <label class="form-check-label" for="ao41">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao41" id="ao41_2" value="2">
+                        <label class="form-check-label" for="ao41">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Eletiva 42 (Eixo Sistemas de Gestão Assistencial)
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao42" id="ao42_1" value="1" required="">
+                        <label class="form-check-label" for="ao8">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao42" id="ao42_2" value="2">
+                        <label class="form-check-label" for="ao42">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Eletiva 43 (Eixo Sistemas de Gestão Assistencial)
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao43" id="ao43_1" value="1" required="">
+                        <label class="form-check-label" for="ao43">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao43" id="ao43_2" value="2">
+                        <label class="form-check-label" for="ao43">Não</label>
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="card-header">
+                    Ação Eletiva 44 (Eixo Sistemas de Gestão Assistencial)
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"><b>100% implementado?</b></p>
+                    <p>
+                        <input type="radio" name="ao44" id="ao44_1" value="1" required="">
+                        <label class="form-check-label" for="ao44">Sim</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" name="ao44" id="ao44_2" value="2">
+                        <label class="form-check-label" for="ao44">Não</label>
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div class="mb-5">
+                <button type="submit" class="btn btn-outline-success enviar_avaliacao">Enviar Avaliação</button>
+            </div>
+
+           
+            <div class="card mb-5" id="conclusao">
+                <div class="card-body">
+                    <div class="jumbotron">
+                        <h1 class="display-4">CONCLUSÃO</h1>
+                        <p class="lead"></p>
+                        <hr class="my-4">
+                        <p class="nextnivel"></p>
+                    </div>
+                </div>
+                <div class="mb-5">
+                    <button type="reset" class="btn btn-outline-primary limpa_avaliacao" onclick="location.href='#home';">Ok, entendí</button>
+                </div>
+            </div>
+
+        </form>
+    </div> 
+</section>
+ -->

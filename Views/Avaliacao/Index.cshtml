@@ -1,0 +1,145 @@
+@{
+ViewData["Title"] = "Inicio";
+
+}
+<section class="cover text-center" id="home">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <div class="container">
+            <h4><a class="navbar-brand" href="#">“SELO AMIGO DO IDOSO”</a></h4>
+            <button class="navbar-toggler navbar-toggler-social" type="button" data-toggle="collapse" data-target="#navbar-4" aria-controls="navbar-4" aria-expanded="false" aria-label="Toggle navigation">Selos</button>
+            <div class="collapse navbar-collapse pull-xs-right justify-content-end" id="navbar-4">
+                <ul class="social navbar-nav mt-2 mt-md-0 ml-2">
+                    <li>
+                        <img src="~/images/amigo_do_idoso.png" />
+                    </li>
+                    <li class="mr-2">
+                        <img src="~/images/instituto_do_cancer.jpg" />
+                    </li>
+                    <li>
+                        <img src="~/images/gov_sp.jpg" />
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="cover-container pb-4 ">
+        <div class="cover-inner container">
+            @if (TempData["Nivel"] != null)
+            {
+                <div class="card mb-5" id="conclusao">
+                    <div class="card-body">
+                        <div class="jumbotron" style="background-color: #455679">
+                            <h1 class="display-4">CONCLUSÃO</h1>
+                            <p class="lead">
+                                Agradecemos pelo preenchimento da auto avaliação.
+                                De acordo com as regras do “Selo Amigo do Idoso”, sua instituição está apta a iniciar a Certificação no <b>@TempData["Nivel"]</b>.
+                            </p>
+
+                            @if ((TempData["ReqAdesao"] != null))
+                            {
+                                <hr class="my-4">
+                                @if ((string)TempData["NextNivel"] != null)
+                                {
+                                    <p class='nextnivel'>Para Certificação no próximo nível, que seria o nível <b> @TempData["nextnivel"] </b>, sua instituição deve implantar: </p>
+                                }
+
+                                @if (
+                                  ((TempData["ReqAdesao"] != null && (bool)TempData["ReqAdesao"] != false) ||
+                                  (TempData["ReqBasico"] != null && (bool)TempData["ReqBasico"] != false)) &&
+                                  (TempData["Restam"] != null && (int)TempData["Restam"] != 0)
+                                  )
+                                {
+                                    <p class='nextnivel'>@TempData["Implementar"]</p>
+                                }
+
+                                @if (
+                                      ((bool)TempData["EixoInfo"] == false) ||
+                                      ((bool)TempData["EixoFisi"] == false) ||
+                                      ((bool)TempData["EixoAssi"] == false) ||
+                                      ((bool)TempData["ContInfoInter"] == false) ||
+                                      ((bool)TempData["ContFisiInter"] == false) ||
+                                      ((bool)TempData["ContAssiInter"] == false) ||
+                                      ((bool)TempData["ContInfoPleno"] == false) ||
+                                      ((bool)TempData["ContFisiPleno"] == false) ||
+                                      ((bool)TempData["ContAssiPleno"] == false) ||
+                                      ((bool)TempData["ContInfoPleno"] == true) ||
+                                      ((bool)TempData["ContFisiPleno"] == true) ||
+                                      ((bool)TempData["ContAssiPleno"] == true)
+                                  )
+                                {
+                                    <p class='nextnivel'>@TempData["Eletiva"]</p>
+                                }
+                                <p>@TempData["R2Diag"]</p>
+                                <hr class="my-4">
+                            }
+                            <p class="nextnivel">Uma cópia da auto avaliação foi enviada para o e-mail <b>@TempData["Email"]</b></p>
+                            <div class="row">
+                                <div class="m-auto col-md-4">
+                                    <a class="page-scroll btn btn-primary btn-lg mb-2 mr-2 ml-2 pill-btn" href="http://sistema.seloamigodoidoso.saude.sp.gov.br/inscricao/selo-amigo-do-idoso">Fazer inscrição</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @if (TempData["DEBUG_DP"] != null && (bool)TempData["DEBUG_DP"] != false)
+                {
+                    <ul class="list-group col-lg-12" style="color: #ff0000;">
+                        <li class="list-group-item">Conta ContAdes: <b>@TempData["ContAdes"]</b></li>
+                        <li class="list-group-item">Conta ContBasi: <b>@TempData["ContBasi"]</b></li>
+                        <li class="list-group-item">Conta ContInfoInter: <b>@TempData["ContInfoInter"]</b></li>
+                        <li class="list-group-item">Conta ContInfoPleno: <b>@TempData["ContInfoPleno"]</b></li>
+                        <li class="list-group-item">Conta ContFisiInter: <b>@TempData["ContFisiInter"]</b></li>
+                        <li class="list-group-item">Conta ContFisiPleno: <b>@TempData["ContFisiPleno"]</b></li>
+                        <li class="list-group-item">Conta ContAssiInter: <b>@TempData["ContAssiInter"]</b></li>
+                        <li class="list-group-item">Conta ContAssiPleno: <b>@TempData["ContAssiPleno"]</b></li>
+                        <li class="list-group-item">Eixo EixoInfo: <b>@TempData["EixoInfo"]</b></li>
+                        <li class="list-group-item">Eixo EixoFisi: <b>@TempData["EixoFisi"]</b></li>
+                        <li class="list-group-item">Eixo EixoAssi: <b>@TempData["EixoAssi"]</b></li>
+
+                        <li class="list-group-item">R2 <b>@TempData["R2"]</b></li>
+                        <li class="list-group-item">restam: <b>@TempData["restam"]</b></li>
+                        <li class="list-group-item">ReqAdesao: <b>@TempData["ReqAdesao"]</b></li>
+                        <li class="list-group-item">ReqBasico: <b>@TempData["ReqBasico"]</b></li>
+                        <li class="list-group-item">ReqIntermediario: <b>@TempData["ReqIntermediario"]</b></li>
+                        <li class="list-group-item">Conta Inicial: <b> @TempData["ContaInicial"]</b></li>
+                        <li class="list-group-item">
+                            : <b>
+                                @TempData["Conta_eixo_info"]
+                            </b>
+                        </li>Conta_eixo_info
+                        <li class="list-group-item">
+                            Conta_eixo_fisi: <b>
+                                @TempData["Conta_eixo_fisi"]
+                            </b>
+                        </li>
+                        <li class="list-group-item">
+                            Conta_eixo_assi: <b>
+                                @TempData["Conta_eixo_assi"]
+                            </b>
+                        </li>
+                    </ul>
+                }
+            }
+            else
+            {
+                @*<div class="card mb-5" id="conclusao">
+            <div class="card-body">*@
+                <div class="jumbotron" style="background-color: rgba(0, 0, 0, 0.4);">
+                    <h4 class="jumbotron-heading">AUTO AVALIAÇÃO DO “SELO AMIGO DO IDOSO”</h4>
+                    <h5>Preencha o formulário abaixo de auto avaliação informando quais ações sua instituição já tem implementada.</h5>
+                    <h5>Ao final do preenchimento, o sistema demonstrará em qual nível do Selo sua instituição se encaixa, e também informará quantas ações faltam atender para a certificação no próximo nível.</h5>
+                    <h5 class="mb-5">
+                        Uma cópia da auto avaliação e conclusão será enviada para o e-mail cadastrado abaixo.
+                    </h5>
+                    <div class="row">
+                        <div class="m-auto col-md-4">
+                            <a class="page-scroll btn btn-primary btn-lg mb-2 mr-2 ml-2 pill-btn" asp-action="Create">Começar a avaliação</a>
+                        </div>
+                    </div>
+                </div>
+                @*</div>
+            </div>>*@
+            }
+        </div>
+                </div>
+            </section>
